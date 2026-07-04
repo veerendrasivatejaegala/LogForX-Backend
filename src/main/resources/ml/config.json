@@ -1,0 +1,98 @@
+{
+  "integrity": {
+    "feature_names": [
+      "has_json",
+      "has_csv_commas",
+      "invalid_date_ratio",
+      "invalid_ip_ratio",
+      "invalid_value_ratio",
+      "truncated_ratio",
+      "invalid_path_ratio",
+      "bad_row_ratio",
+      "rtf_marker",
+      "corrupt_marker",
+      "alert_dump_marker",
+      "filename_corrupt",
+      "empty_file"
+    ],
+    "pass_threshold": 0.5,
+    "train_accuracy": 0.9375,
+    "train_samples": 16
+  },
+  "threat": {
+    "window_feature_names": [
+      "event_count",
+      "max_failed_logins_per_ip",
+      "max_unique_ports_per_ip",
+      "max_requests_per_second",
+      "avg_requests_per_second",
+      "unique_source_ips",
+      "kw_bruteforce",
+      "kw_ddos",
+      "kw_dos",
+      "kw_portscan",
+      "kw_spyware",
+      "kw_adware",
+      "kw_phishing",
+      "kw_malware",
+      "kw_unauthorized",
+      "behavioral_bruteforce",
+      "behavioral_ddos",
+      "behavioral_dos",
+      "behavioral_portscan"
+    ],
+    "threat_labels": [
+      "bruteforce",
+      "ddos",
+      "dos",
+      "port_scan",
+      "spyware",
+      "adware",
+      "phishing",
+      "malware_execution",
+      "unauthorized_access"
+    ],
+    "threat_display": {
+      "bruteforce": "Brute Force Attack",
+      "ddos": "DDoS / DoS Attack",
+      "dos": "DoS Attack",
+      "port_scan": "Port Scanning",
+      "spyware": "Spyware / Credential Harvesting",
+      "adware": "Adware / PUA Detected",
+      "phishing": "Phishing Attack",
+      "malware_execution": "Malware Execution",
+      "unauthorized_access": "Unauthorized Access Attempt"
+    },
+    "threat_severity": {
+      "bruteforce": "Critical",
+      "ddos": "Critical",
+      "dos": "Critical",
+      "port_scan": "High",
+      "spyware": "Critical",
+      "adware": "Medium",
+      "phishing": "High",
+      "malware_execution": "Critical",
+      "unauthorized_access": "High"
+    },
+    "threat_mitre": {
+      "bruteforce": "T1110.001 (Brute Force: Password Guessing)",
+      "ddos": "T1498 (Network Denial of Service)",
+      "dos": "T1499 (Endpoint Denial of Service)",
+      "port_scan": "T1046 (Network Service Discovery)",
+      "spyware": "T1003 (OS Credential Dumping)",
+      "adware": "T1176 (Browser Extensions)",
+      "phishing": "T1566 (Phishing)",
+      "malware_execution": "T1059 (Command and Scripting Interpreter)",
+      "unauthorized_access": "T1078 (Valid Accounts) / T1021 (Remote Services)"
+    },
+    "confidence_threshold": 0.35,
+    "behavioral_thresholds": {
+      "bruteforce_failed_logins": 3,
+      "ddos_rps": 3000,
+      "dos_rps": 1500,
+      "port_scan_unique_ports": 2
+    },
+    "train_batches": 8,
+    "text_features": 500
+  }
+}
